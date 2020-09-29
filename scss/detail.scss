@@ -1,4 +1,15 @@
+.container {
+	align-items: center;
+	background: $white-smoke;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
 .book-card {
+	box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
 	display: flex;
 	flex-flow: row wrap;
 	height: 100%;
@@ -9,6 +20,8 @@
 }
 
 .book-cover {
+	display: flex;
+	flex-direction: column;
 	height: 368px;
 	margin: 0 52px 0 0;
 	overflow: hidden;
@@ -21,9 +34,14 @@
 
 .book {
 	color: $black;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 
 	&__title {
-		margin: 0 0 52px 0;
+		border-bottom: 4px solid $las-palmas;
+		padding: 0 0 12px 0;
+		
 		h1 {
 			font-size: 39px;
 			font-weight: 700;
@@ -36,7 +54,7 @@
 	}
 
 	&__detail ul li{
-		margin: 0 0 36px 0;
+		margin: 36px 0 0 0;
 		h2 {
 			font-size: 22px;
 			font-weight: bold;
