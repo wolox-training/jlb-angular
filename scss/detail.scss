@@ -66,7 +66,7 @@
     }
   }
 
-  &__detail ul li{
+  &__info ul li{
     margin: 36px 0 0 0;
 
     &__text--main {
@@ -74,13 +74,13 @@
     }
   }
   
-  &__detail__text--main,
-  &__detail__text--secundary {
+  &__info__text--main,
+  &__info__text--secundary {
     font-size: 22px;
   }
 
   &__title__text--secundary,
-  &__detail__text--secundary {
+  &__info__text--secundary {
     color: $gray;
   }
 }
