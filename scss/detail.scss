@@ -5,7 +5,8 @@
   min-width: 100vw;
 
   .card {
-    box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
+    background-color: white;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
     display: flex;
     flex-flow: row wrap;
     height: 100%;
@@ -49,30 +50,30 @@
 
     &__title {
       border-bottom: 4px solid $las-palmas;
-      padding: 0 0 12px 0;
+      padding-bottom: 12px;
 
       &--main {
-        font-size: 39px;
+        font-size: 32px;
         font-weight: 700;
       }
 
       &--secundary {
-        font-size: 30px;
+        font-size: 24px;
         font-weight: bold;
       }
     }
 
     &__item {
-      margin: 36px 0 0 0;
+      margin-top: 36px;
 
-      &__text--main {
+      &--main {
         font-weight: bold;
       }
     }
     
     &__item--main,
     &__item--secundary {
-      font-size: 22px;
+      font-size: 20px;
     }
 
     &__title--secundary,
