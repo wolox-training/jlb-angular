@@ -1,86 +1,83 @@
-.container {
+.detail {
   align-items: center;
-  background: $white-smoke;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw;
-}
 
-.book-card {
-  box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
-  display: flex;
-  flex-flow: row wrap;
-  height: 100%;
-  max-height: 416px;
-  max-width: 900px;
-  padding: 24px;
-  width: 100%;
-}
-
-.book-cover {
-  display: flex;
-  flex-direction: column;
-  height: 368px;
-  margin: 0 52px 0 0;
-  position: relative;
-
-  &__image {
-    height: inherit;
-    width: auto;
+  .card {
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    max-height: 416px;
+    max-width: 900px;
+    padding: 24px;
+    width: 100%;
   }
 
-  &__badge {
-    height: 118.57px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translate(30%, -15%) rotate(15deg);
-    width: 94.53px;
-    
+  .cover {
+    display: flex;
+    flex-direction: column;
+    height: 368px;
+    margin: 0 52px 0 0;
+    position: relative;
+
     &__image {
       height: inherit;
-    }
-  }
-}
-
-.book {
-  color: $black;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-
-  &__title {
-    border-bottom: 4px solid $las-palmas;
-    padding: 0 0 12px 0;
-
-    &__text--main {
-      font-size: 39px;
-      font-weight: 700;
+      width: auto;
     }
 
-    &__text--secundary {
-      font-size: 30px;
-      font-weight: bold;
+    &__badge {
+      height: 118.57px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(30%, -15%) rotate(15deg);
+      width: 94.53px;
+      
+      &__image {
+        height: inherit;
+      }
     }
   }
 
-  &__info ul li{
-    margin: 36px 0 0 0;
+  .info {
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 
-    &__text--main {
-      font-weight: bold;
+    &__title {
+      border-bottom: 4px solid $las-palmas;
+      padding: 0 0 12px 0;
+
+      &--main {
+        font-size: 39px;
+        font-weight: 700;
+      }
+
+      &--secundary {
+        font-size: 30px;
+        font-weight: bold;
+      }
     }
-  }
-  
-  &__info__text--main,
-  &__info__text--secundary {
-    font-size: 22px;
-  }
 
-  &__title__text--secundary,
-  &__info__text--secundary {
-    color: $gray;
+    &__item {
+      margin: 36px 0 0 0;
+
+      &__text--main {
+        font-weight: bold;
+      }
+    }
+    
+    &__item--main,
+    &__item--secundary {
+      font-size: 22px;
+    }
+
+    &__title--secundary,
+    &__item--secundary {
+      color: $gray;
+    }
   }
 }
