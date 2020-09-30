@@ -8,7 +8,8 @@
   min-width: 100vw;
 }
 
-.book-card {
+.card {
+  background-color: white;
   box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
   display: flex;
   flex-flow: row wrap;
@@ -19,11 +20,11 @@
   width: 100%;
 }
 
-.book-cover {
+.cover {
   display: flex;
   flex-direction: column;
   height: 368px;
-  margin: 0 52px 0 0;
+  margin-right: 52px;
   overflow: hidden;
 
   &__image {
@@ -32,7 +33,7 @@
   }
 }
 
-.book {
+.info {
   color: $black;
   display: flex;
   flex-direction: column;
@@ -40,34 +41,34 @@
 
   &__title {
     border-bottom: 4px solid $las-palmas;
-    padding: 0 0 12px 0;
+    padding-bottom: 12px;
 
-    &__text--main {
-      font-size: 39px;
+    &--main {
+      font-size: 32px;
       font-weight: 700;
     }
 
-    &__text--secundary {
-      font-size: 30px;
+    &--secundary {
+      font-size: 24px;
       font-weight: bold;
     }
   }
 
-  &__detail ul li{
-    margin: 36px 0 0 0;
+  &__item {
+    margin-top: 36px;
 
-    &__text--main {
+    &--main {
       font-weight: bold;
     }
   }
   
-  &__detail__text--main,
-  &__detail__text--secundary {
-    font-size: 22px;
+  &__item--main,
+  &__item--secundary {
+    font-size: 20px;
   }
 
-  &__title__text--secundary,
-  &__detail__text--secundary {
+  &__title--secundary,
+  &__item--secundary {
     color: $gray;
   }
 }
