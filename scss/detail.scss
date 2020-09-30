@@ -1,54 +1,56 @@
 .book-card {
-	display: flex;
-	flex-flow: row wrap;
-	height: 100%;
-	max-height: 416px;
-	max-width: 900px;
-	padding: 24px;
-	width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  max-height: 416px;
+  max-width: 900px;
+  padding: 24px;
+  width: 100%;
 }
 
 .book-cover {
-	height: 368px;
-	margin: 0 52px 0 0;
-	overflow: hidden;
+  height: 368px;
+  margin: 0 52px 0 0;
+  overflow: hidden;
 
-	img {
-		height: inherit;
-		width: auto;
-	}
+  img {
+    height: inherit;
+    width: auto;
+  }
 }
 
 .book {
-	color: $black;
+  color: $black;
 
-	&__title {
-		margin: 0 0 52px 0;
-		h1 {
-			font-size: 39px;
-			font-weight: 700;
-		}
+  &__title {
+    margin: 0 0 52px 0;
 
-		span {
-			font-size: 30px;
-			font-weight: bold;
-		}
-	}
+    &__text--main {
+      font-size: 39px;
+      font-weight: 700;
+    }
 
-	&__detail ul li{
-		margin: 0 0 36px 0;
-		h2 {
-			font-size: 22px;
-			font-weight: bold;
-		}
-		
-		span {
-			font-size: 22px;
-		}
-	}
+    &__text--secundary {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
 
-	&__title span,
-	&__detail span {
-		color: $gray;
-	}
+  &__detail ul li{
+    margin: 0 0 36px 0;
+
+    &__text--main {
+      font-weight: bold;
+    }
+  }
+  
+  &__detail__text--main,
+  &__detail__text--secundary {
+    font-size: 22px;
+  }
+
+  &__title__text--secundary,
+  &__detail__text--secundary {
+    color: $gray;
+  }
 }
