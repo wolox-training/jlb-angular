@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     height: 368px;
-    margin: 0 52px 0 0;
+    margin-right: 52px;
     position: relative;
 
     &__image {
@@ -44,30 +44,30 @@
 
     &__title {
       border-bottom: 4px solid $las-palmas;
-      padding: 0 0 12px 0;
+      padding-bottom: 12px;
 
       &--main {
-        font-size: 39px;
+        font-size: 32px;
         font-weight: 700;
       }
 
       &--secundary {
-        font-size: 30px;
+        font-size: 24px;
         font-weight: bold;
       }
     }
 
     &__item {
-      margin: 36px 0 0 0;
+      margin-top: 36px;
 
-      &__text--main {
+      &--main {
         font-weight: bold;
       }
     }
     
     &__item--main,
     &__item--secundary {
-      font-size: 22px;
+      font-size: 20px;
     }
 
     &__title--secundary,
