@@ -3,81 +3,81 @@
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw;
+}
 
-  .card {
-    background-color: white;
-    box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
-    display: flex;
-    flex-flow: row wrap;
-    max-height: 416px;
-    max-width: 900px;
-    padding: 24px;
-    width: 100%;
+.card {
+  background-color: white;
+  box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
+  display: flex;
+  flex-flow: row wrap;
+  max-height: 416px;
+  max-width: 900px;
+  padding: 24px;
+  width: 100%;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  height: 368px;
+  margin: 0 52px 0 0;
+  position: relative;
+
+  &__image {
+    height: inherit;
+    width: auto; 
   }
 
-  .cover {
-    display: flex;
-    flex-direction: column;
-    height: 368px;
-    margin: 0 52px 0 0;
-    position: relative;
+  &::after {
+    background-image: url(assets/badge.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    height: 120px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(30%, -15%) rotate(15deg);
+    width: 94px;
+  }
+}
 
-    &__image {
-      height: inherit;
-      width: auto;
+.info {
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__title {
+    border-bottom: 4px solid $las-palmas;
+    padding-bottom: 12px;
+
+    &--main {
+      font-size: 32px;
+      font-weight: 700;
     }
 
-    &__badge {
-      height: 118.57px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transform: translate(30%, -15%) rotate(15deg);
-      width: 94.53px;
-      
-      &__image {
-        height: inherit;
-      }
+    &--secundary {
+      font-size: 24px;
+      font-weight: bold;
     }
   }
 
-  .info {
-    color: $black;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+  &__item {
+    margin-top: 36px;
 
-    &__title {
-      border-bottom: 4px solid $las-palmas;
-      padding-bottom: 12px;
-
-      &--main {
-        font-size: 32px;
-        font-weight: 700;
-      }
-
-      &--secundary {
-        font-size: 24px;
-        font-weight: bold;
-      }
+    &--main {
+      font-weight: bold;
     }
+  }
+  
+  &__item--main,
+  &__item--secundary {
+    font-size: 20px;
+  }
 
-    &__item {
-      margin-top: 36px;
-
-      &--main {
-        font-weight: bold;
-      }
-    }
-    
-    &__item--main,
-    &__item--secundary {
-      font-size: 20px;
-    }
-
-    &__title--secundary,
-    &__item--secundary {
-      color: $gray;
-    }
+  &__title--secundary,
+  &__item--secundary {
+    color: $gray;
   }
 }
