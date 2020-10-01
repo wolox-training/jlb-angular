@@ -1,3 +1,23 @@
+.card {
+  display: flex;
+  flex-flow: row wrap;
+  max-height: 416px;
+  max-width: 900px;
+  padding: 24px;
+  width: 100%;
+}
+
+.cover {
+  height: 368px;
+  margin-right: 52px;
+  overflow: hidden;
+
+  &__image {
+    height: inherit;
+    width: auto;
+  }
+}
+
 .info {
   color: $black;
 
