@@ -1,0 +1,35 @@
+.info {
+  color: $black;
+
+  &__title {
+    margin-bottom: 52px;
+
+    &--main {
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    &--secundary {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+
+  &__item {
+    margin-bottom: 36px;
+
+    &--main {
+      font-weight: bold;
+    }
+  }
+  
+  &__item--main,
+  &__item--secundary {
+    font-size: 20px;
+  }
+
+  &__title--secundary,
+  &__item--secundary {
+    color: $gray;
+  }
+}
