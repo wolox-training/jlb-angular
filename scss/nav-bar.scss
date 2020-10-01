@@ -1,0 +1,26 @@
+.nav-bar {
+  align-items: center;
+  background-color: $white;
+  border-top: 4px solid $deep-sky-blue;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .logo {
+    overflow: hidden;
+    width: 212px;
+
+    &__image {
+      width: inherit;
+    }
+  }
+
+  .log-out {
+    font-size: 18px;
+  }
+}
