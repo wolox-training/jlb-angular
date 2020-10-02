@@ -9,11 +9,12 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 
   .logo {
     height: 100%;
-    width: 212px;
     position: relative;
+    width: 212px;
 
     &::after {
       background-image: url(assets/LogoWolox.png);
