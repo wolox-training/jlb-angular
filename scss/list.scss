@@ -3,41 +3,44 @@
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw;
+}
 
-  .content {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    max-width: 936px;
+.content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 936px;
+  width: 100%;
+}
+
+.list__card {
+  background: $white;
+  box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
+  display: flex;
+  flex-flow: column;
+  margin: 16px;
+  max-height: 300px;
+  max-width: 198px;
+  padding: 28px 28px 24px;
+}
+
+.list__cover {
+  margin-bottom: 12px;
+  overflow: hidden;
+
+  &__image {
+    max-width: inherit;
     width: 100%;
-
-    .author {
-      color: $gray;
-      font-size: 14px;
-    }
-    
-    .title {
-      font-size: 16px;
-      font-weight: bold;
-      margin: 0 0 8px 0;
-    }
-
-    .card {
-      flex-flow: column nowrap;
-      margin: 18px;
-      max-height: 300px;
-      max-width: 198px;
-      padding: 28px 28px 23px 28px;
-    }
-
-    .cover {
-      margin: 0 0 12px 0;
-      overflow: hidden;
-
-      &__image {
-        max-width: inherit;
-        width: 100%;
-      }
-    }
   }
+}
+
+.list__author {
+  color: $gray;
+  font-size: 14px;
+}
+
+.list__title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
