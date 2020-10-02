@@ -1,7 +1,5 @@
-.container {
+.detail {
   align-items: center;
-  background: $white-smoke;
-  display: flex;
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw;
@@ -23,11 +21,24 @@
   flex-direction: column;
   height: 368px;
   margin-right: 52px;
-  overflow: hidden;
+  position: relative;
 
   &__image {
     height: inherit;
-    width: auto;
+    width: auto; 
+  }
+
+  &::after {
+    background-image: url(assets/badge.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    height: 120px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(30%, -15%) rotate(15deg);
+    width: 94px;
   }
 }
 
