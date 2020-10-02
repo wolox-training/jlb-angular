@@ -1,4 +1,15 @@
+.container {
+  align-items: center;
+  background: $white-smoke;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
 .card {
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
   display: flex;
   flex-flow: row wrap;
   max-height: 416px;
@@ -8,6 +19,8 @@
 }
 
 .cover {
+  display: flex;
+  flex-direction: column;
   height: 368px;
   margin-right: 52px;
   overflow: hidden;
@@ -20,9 +33,13 @@
 
 .info {
   color: $black;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
   &__title {
-    margin-bottom: 52px;
+    border-bottom: 4px solid $las-palmas;
+    padding-bottom: 12px;
 
     &--main {
       font-size: 32px;
@@ -36,7 +53,7 @@
   }
 
   &__item {
-    margin-bottom: 36px;
+    margin-top: 36px;
 
     &--main {
       font-weight: bold;
