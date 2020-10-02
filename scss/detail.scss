@@ -1,4 +1,4 @@
-.detail-wraper {
+.detail__wrapper {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
 }
 
 .card {
-  background: $white;
+  background-color: $white;
   box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
   display: flex;
   flex-flow: row wrap;
