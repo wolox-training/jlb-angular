@@ -1,6 +1,15 @@
-.container {
+body {
   background: $white-smoke;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+}
+
+.container {
   display: flex;
+  flex-direction: column;
   height: 100%;
+  position: absolute;
   width: 100%;
+  // overflow: auto;
 }

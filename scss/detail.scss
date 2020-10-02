@@ -1,8 +1,16 @@
-.detail {
+.detail-wraper {
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
-  min-height: 100vh;
-  min-width: 100vw;
+}
+
+.redirection {
+  display: flex;
+  width: 100%;
+  background-color: red;
+  align-self: flex-start;
 }
 
 .card {
