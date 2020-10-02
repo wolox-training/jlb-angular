@@ -1,16 +1,6 @@
 .container {
   background: $white-smoke;
   display: flex;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-}
-
-.card {
-  background: $white;
-  box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
-  display: flex;
-  flex-flow: row wrap;
   height: 100%;
   width: 100%;
 }

@@ -2,9 +2,8 @@
   align-items: center;
   background-color: $white;
   border-top: 4px solid $deep-sky-blue;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px 0 rgba($black, 0.5);
   display: flex;
-  flex-direction: row;
   height: 70px;
   justify-content: space-around;
   position: fixed;
@@ -12,11 +11,18 @@
   width: 100%;
 
   .logo {
-    overflow: hidden;
+    height: 100%;
     width: 212px;
+    position: relative;
 
-    &__image {
-      width: inherit;
+    &::after {
+      background-image: url(assets/LogoWolox.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 100%;
     }
   }
 
