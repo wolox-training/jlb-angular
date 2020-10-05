@@ -25,6 +25,11 @@
   max-height: 300px;
   max-width: 198px;
   padding: 28px 28px 24px;
+  transition: transform .2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .list__cover {
