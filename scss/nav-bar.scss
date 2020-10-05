@@ -9,20 +9,13 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1;
 
   .logo {
-    height: 100%;
-    position: relative;
     width: 212px;
 
-    &::after {
-      background-image: url(assets/LogoWolox.png);
-      background-repeat: no-repeat;
-      background-size: contain;
-      content: '';
+    &__image {
       height: 100%;
-      position: absolute;
       width: 100%;
     }
   }
