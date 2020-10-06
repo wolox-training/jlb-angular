@@ -1,13 +1,16 @@
-.list {
+.list__wrapper {
   align-items: center;
+  display: flex;
+  flex-grow: 1;
   justify-content: center;
-  min-height: 100vh;
-  min-width: 100vw;
+  margin-top: 70px;
+  width: 100%;
 }
 
-.content {
+.list__cards {
+  align-items: center;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   justify-content: center;
   max-width: 936px;
   width: 100%;
