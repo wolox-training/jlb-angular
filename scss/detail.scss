@@ -4,6 +4,11 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+  
+  @include for-mobile {
+    flex-grow: 0;
+    margin-bottom: 36px;
+  }
 }
 
 .redirect {
@@ -21,17 +26,25 @@
       margin-right: 12px;
     }
   }
+
+  @include for-mobile {
+    justify-content: center;
+    order: 1;
+  }
 }
 
 .card {
   background-color: $white;
   box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
   display: flex;
-  flex-flow: row wrap;
-  max-height: 416px;
   max-width: 900px;
   padding: 24px;
   width: 100%;
+
+  @include for-mobile {
+    flex-direction: column;
+    max-width: 336px;
+  }
 }
 
 .cover {
@@ -51,12 +64,30 @@
     background-repeat: no-repeat;
     background-size: contain;
     content: '';
-    height: 120px;
+    height: $badge-heigth;
     position: absolute;
     right: 0;
     top: 0;
     transform: translate(30%, -15%) rotate(15deg);
-    width: 94px;
+    width: $badge-width;
+  }
+
+  @include for-mobile {
+    align-self: center;
+    height: fit-content;
+    margin-bottom: 36px;
+    margin-right: 0;
+    width: fit-content;
+
+    &__image {
+      height: auto;
+      width: 212px;
+    }
+
+    &::after {
+      height: $badge-heigth * .7;
+      width: $badge-width * .7;
+    }
   }
 }
 
@@ -97,5 +128,23 @@
   &__title--secundary,
   &__item--secundary {
     color: $gray;
+  }
+
+  @include for-mobile {
+    flex-grow: 0;
+    padding-bottom: 36px;
+
+    &__title--main {
+      font-size: 24px;
+    }
+
+    &__title--secundary {
+      font-size: 16px;
+    }
+
+    &__item--main,
+    &__item--secundary {
+      font-size: 14px;
+    }
   }
 }
