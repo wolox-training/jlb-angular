@@ -1,0 +1,89 @@
+.login__wrapper {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+.login__card {
+  background-color: $white-smoke;
+  border-top: 8px solid $deep-sky-blue;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  padding: 28px 24px 0;
+  width: 100%;
+}
+
+.login__logo {
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    background-image: url(assets/LogoWolox.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    height: inherit;
+    position: absolute;
+    width: 212px;
+  }
+}
+
+.form__label {
+  display: flex;
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.form__input {
+  border-radius: 5px;
+  display: flex;
+  height: 32px;
+  margin-bottom: 16px;
+  padding: 10px;
+  width: 100%;
+
+  &[password] {
+    margin-bottom: 24px;
+  }
+}
+
+.login__btn {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  font-size: 16px;
+  font-weight: lighter;
+  height: 32px;
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.primary {
+  background-color: $las-palmas;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+
+  &::after {
+    background-color: $gray;
+    bottom: -24px;
+    content: '';
+    min-height: 1px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.secundary {
+  border: 2px solid $las-palmas;
+  color: $las-palmas;
+}
