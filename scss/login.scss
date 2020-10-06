@@ -34,7 +34,7 @@
   }
 }
 
-.login__label {
+.form__label {
   display: flex;
   font-size: 16px;
   font-weight: lighter;
@@ -42,7 +42,7 @@
   width: 100%;
 }
 
-.login__input {
+.form__input {
   border-radius: 5px;
   display: flex;
   height: 32px;
@@ -63,24 +63,27 @@
   font-weight: lighter;
   height: 32px;
   justify-content: center;
-  width: 100%;
-  
-  &[login] {
-    background-color: $las-palmas;
-    color: white;
-  }
-
-  &[sign-up] {
-    border: 2px solid $las-palmas;
-    color: $las-palmas;
-
-  }
-}
-
-.divider {
-  margin-bottom: 16px;
-}
-
-.login__btn {
   margin-bottom: 24px;
+  width: 100%;
+}
+
+.primary {
+  background-color: $las-palmas;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+
+  &::after {
+    background-color: $gray;
+    bottom: -24px;
+    content: '';
+    min-height: 1px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.secundary {
+  border: 2px solid $las-palmas;
+  color: $las-palmas;
 }
