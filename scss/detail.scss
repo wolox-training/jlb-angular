@@ -6,6 +6,23 @@
   justify-content: center;
 }
 
+.redirect {
+  display: flex;
+  width: 100%;
+  align-self: flex-start;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    
+    &::before {
+      content: url(assets/back-arrow-20.png);
+      margin-right: 12px;
+    }
+  }
+}
+
 .card {
   background-color: $white;
   box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
