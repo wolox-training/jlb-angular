@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { SignUpData } from './interfaces/sign-up-data';
+import { User } from './interfaces/user';
 import { matchingValidator } from './helpers/utilities/matching.validator';
 
 @Component({
@@ -13,24 +13,27 @@ export class SignUpComponent implements OnInit {
 
   form: FormGroup;
 
+  private user: User; 
+
   constructor(private fb: FormBuilder) {
     this.form = fb.group({
       first_name: [null, Validators.required],
       last_name: [null, Validators.required],
       email: [null, Validators.compose([Validators.required, Validators.email])],
       password: [null, Validators.compose([Validators.required, Validators.pattern(/^(?=.{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).*$/)])],
-      password_confirmation: [null, Validators.compose([Validators.required])]
+      password_confirmation: [null, Validators.compose([Validators.required])],
+      locale: ['en']
     },
     {
       validator: matchingValidator('password', 'password_confirmation')
     });
   }
 
-  signUp(signUpData: SignUpData) {
-    console.log('signUpData', signUpData);
+  signUp(user: User) {
+    this.user = user;
+    console.log({user: this.user});
   }
 
   ngOnInit(): void {
   }
-
 }
