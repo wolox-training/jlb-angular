@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { User } from './interfaces/user';
 import { matchingValidator } from './helpers/utilities/matching.validator';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,7 +16,7 @@ export class SignUpComponent implements OnInit {
 
   private user: User; 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userSevice: UserService) {
     this.form = fb.group({
       first_name: [null, Validators.required],
       last_name: [null, Validators.required],
@@ -31,7 +32,15 @@ export class SignUpComponent implements OnInit {
 
   signUp(user: User) {
     this.user = user;
-    console.log({user: this.user});
+    this.userSevice.createUser(this.user).subscribe(
+      (data: any) => {
+        console.log('Success');
+      },
+      (err) => {
+        console.log('Unsuccess');
+        console.log('err', err);
+      }
+    )
   }
 
   ngOnInit(): void {
