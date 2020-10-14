@@ -8,35 +8,31 @@
   <link rel="stylesheet"  type="text/css" href="application.css">
 </head>
 <body class="body">
-  <div class="container">
-    <div class="redirect">
-      <a class="redirect__button" href="./list.html">Atrás</a>
-    </div>
-    <div class="detail__wrapper">
-      <div class="card">
+  <div class="grid__wrapper">
+    <div class="grid__container">
+      <div class="grid__redirect">
+        <a class="redirect__button" href="./list.html">Atrás</a>
+      </div>
+      <div class="grid__card">
+        <h1 class="title">Título del libro</h1>
+        <h2 class="subtitle">(género)</h2>
         <div class="cover">
           <img class="cover__image" src="assets/book-cover.png" alt="Book cover">
         </div>
-        <div class="info">
-          <div class="info__title">
-            <h1 class="info__title--main">Título del libro</h1>
-            <span class="info__title--secundary">(género)</span>
-          </div>
-          <ul>
-            <li class="info__item">
-              <h2 class="info__item--main">Autor:</h2>
-              <span class="info__item--secundary">Nombre del autor del libro</span>
-            </li>
-            <li class="info__item">
-              <h2 class="info__item--main">Editorial:</h2>
-              <span class="info__item--secundary">Nombre de la editorial</span>
-            </li>
-            <li class="info__item">
-              <h2 class="info__item--main">Año de publicación:</h2>
-              <span class="info__item--secundary">Año de publicación</span>
-            </li>
-          </ul>
-        </div>
+        <ul class="info__items">
+          <li class="info__item mb">
+            <h2 class="info__item--main">Autor:</h2>
+            <span class="info__item--secundary">Nombre del autor del libro</span>
+          </li>
+          <li class="info__item mb">
+            <h2 class="info__item--main">Editorial:</h2>
+            <span class="info__item--secundary">Nombre de la editorial</span>
+          </li>
+          <li class="info__item">
+            <h2 class="info__item--main">Año de publicación:</h2>
+            <span class="info__item--secundary">Año de publicación</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
