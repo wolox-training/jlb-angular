@@ -13,7 +13,7 @@ export class SignUpComponent implements OnInit {
 
   form: FormGroup;
 
-  private user: User; 
+  private user: User;
 
   constructor(private fb: FormBuilder) {
     this.form = fb.group({
@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  signUp(user: User) {
+  signUp(user: User): void {
     this.user = user;
     console.log({user: this.user});
   }
