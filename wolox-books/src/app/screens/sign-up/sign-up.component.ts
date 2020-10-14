@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
 
   form: FormGroup;
 
-  private user: User; 
+  public user: any;
 
   constructor(private fb: FormBuilder, private userSevice: UserService) {
     this.form = fb.group({
@@ -30,17 +30,17 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  signUp(user: User) {
-    this.user = user;
-    this.userSevice.createUser(this.user).subscribe(
+  signUp(user: User): void {
+    this.userSevice.createUser(user).subscribe(
       (data: any) => {
+        this.user = data;
         console.log('Success');
       },
       (err) => {
         console.log('Unsuccess');
         console.log('err', err);
       }
-    )
+    );
   }
 
   ngOnInit(): void {
