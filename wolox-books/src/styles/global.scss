@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'base/variables';
+@import 'base/colors';
+@import 'base/equalizer.scss';
+@import 'base/buttons.scss';
+@import 'base/forms.scss';
+
+.body {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+}
