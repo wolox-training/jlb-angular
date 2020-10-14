@@ -1,15 +1,25 @@
 import { User } from './../interfaces/user';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 
-class MockUserService {
+export class MockUserService {
 
   createUser(user: User): Observable<any> {
-    return of({
-      id: 1,
-      first_name: 'Carl',
-      last_name: 'Sagan',
-      email: 'carlsagan@cosmos.com',
-      locale: 'en'
-    });
+    if (user.email === 'julian.lopera@wolox.co') {
+      return throwError({
+        errors: {
+          email: ['has already been taken'],
+          full_messages: ['Email has already been taken']
+        }
+      }
+    );
+    } else {
+      return of({
+        id: 1,
+        first_name: 'Carl',
+        last_name: 'Sagan',
+        email: 'carlsagan@cosmos.com',
+        locale: 'en'
+      });
+    }
   }
 }

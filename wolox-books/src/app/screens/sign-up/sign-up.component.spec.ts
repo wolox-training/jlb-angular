@@ -1,3 +1,4 @@
+import { MockUserService } from './mocks/mock-user-service';
 import { User } from './interfaces/user';
 import { MockUser } from './mocks/mock-user';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -7,10 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-
-class MockUserService {
-  createUser = jest.fn();
-}
 
 describe('SignUpComponent', () => {
   let fixture: ComponentFixture<SignUpComponent>;
@@ -188,12 +185,18 @@ describe('SignUpComponent', () => {
     });
   });
 
-  // describe('Test: user registration service', () => {
-  //   it('should return an user detial object', () => {
-  //     component.ngOnInit();
-  //     component.signUp(MockUser);
-  //     fixture.detectChanges();
-  //     expect(component.user).toBeDefined();
-  //   });
-  // });
+  describe('Test: user registration service', () => {
+    it('should return an user detial object', () => {
+      component.signUp(MockUser);
+      fixture.detectChanges();
+      expect(component.user).toBeDefined();
+    });
+
+    it('should return an error object', () => {
+      MockUser.email = 'julian.lopera@wolox.co';
+      component.signUp(MockUser);
+      fixture.detectChanges();
+      expect(component.error).toBeDefined();
+    });
+  });
 });

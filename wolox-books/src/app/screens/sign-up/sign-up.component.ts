@@ -15,6 +15,7 @@ export class SignUpComponent implements OnInit {
   form: FormGroup;
 
   public user: any;
+  public error: any;
 
   constructor(private fb: FormBuilder, private userSevice: UserService) {
     this.form = fb.group({
@@ -38,6 +39,7 @@ export class SignUpComponent implements OnInit {
       },
       (err) => {
         console.log('Unsuccess');
+        this.error = err;
         console.log('err', err);
       }
     );
