@@ -15,8 +15,14 @@ export class SignUpComponent implements OnInit {
 
   private user: User;
 
-  constructor(private fb: FormBuilder) {
-    this.form = fb.group({
+  constructor(private fb: FormBuilder) {}
+
+  signUp(user: User): void {
+    this.user = user;
+  }
+
+  ngOnInit(): void {
+    this.form = this.fb.group({
       first_name: [null, Validators.required],
       last_name: [null, Validators.required],
       email: [null, Validators.compose([Validators.required, Validators.email])],
@@ -27,13 +33,5 @@ export class SignUpComponent implements OnInit {
     {
       validator: matchingValidator('password', 'password_confirmation')
     });
-  }
-
-  signUp(user: User): void {
-    this.user = user;
-    console.log({user: this.user});
-  }
-
-  ngOnInit(): void {
   }
 }
