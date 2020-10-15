@@ -14,10 +14,12 @@ export class SignUpComponent implements OnInit {
 
   form: FormGroup;
 
-  private user: User; 
+  private user: User;
 
-  constructor(private fb: FormBuilder, private userSevice: UserService) {
-    this.form = fb.group({
+  constructor(private fb: FormBuilder, private userSevice: UserService) {}
+
+  ngOnInit(): void {
+    this.form = this.fb.group({
       first_name: [null, Validators.required],
       last_name: [null, Validators.required],
       email: [null, Validators.compose([Validators.required, Validators.email])],
@@ -30,19 +32,16 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  signUp(user: User) {
-    this.user = user;
+  signUp(user: User): void {
     this.userSevice.createUser(this.user).subscribe(
       (data: any) => {
+        this.user = data;
         console.log('Success');
       },
       (err) => {
         console.log('Unsuccess');
         console.log('err', err);
       }
-    )
-  }
-
-  ngOnInit(): void {
+    );
   }
 }
