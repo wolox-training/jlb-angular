@@ -8,10 +8,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { Router } from '@angular/router';
 
 describe('SignUpComponent', () => {
   let fixture: ComponentFixture<SignUpComponent>;
   let component: SignUpComponent;
+  let router: Router;
 
   function fillForm(mockUser: User): void {
     component.form.controls.first_name.setValue(mockUser.first_name);
@@ -37,6 +39,8 @@ describe('SignUpComponent', () => {
         { provide: UserService, useClass: MockUserService}
       ]
     }).compileComponents();
+    router = TestBed.inject(Router);
+    spyOn(router, 'navigate').and.callFake(() => { });
   });
 
   beforeEach(() => {
