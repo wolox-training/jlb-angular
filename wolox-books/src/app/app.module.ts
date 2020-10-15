@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { SignUpModule } from './screens/sign-up/sign-up.module';
 import { SignInModule } from './screens/sign-in/sign-in.module';
+import { BookListModule } from './screens/book-list/book-list.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SignInModule } from './screens/sign-in/sign-in.module';
     BrowserModule,
     AppRoutingModule,
     SignUpModule,
-    SignInModule
+    SignInModule,
+    BookListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

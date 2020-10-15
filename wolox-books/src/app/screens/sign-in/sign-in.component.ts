@@ -1,8 +1,10 @@
+import { LocalStorageService } from './../../services/local-storage.service';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { SignInData } from './interfaces/sign-in-data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,7 +16,11 @@ export class SignInComponent implements OnInit {
   form: FormGroup;
   session: any;
 
-  constructor(private fb: FormBuilder, private loginService: LoginService) {
+  constructor(
+    private fb: FormBuilder,
+    private loginService: LoginService,
+    private localStorageService: LocalStorageService,
+    private router: Router) {
     this.form = fb.group({
       email: [null, Validators.compose([Validators.required, Validators.email])],
       password: [null, Validators.required],
@@ -26,6 +32,8 @@ export class SignInComponent implements OnInit {
       data => {
         console.log(data);
         this.session = data;
+        this.localStorageService.saveSession(data);
+        this.router.navigate(['/home']);
       },
       err => {
         console.log(err);

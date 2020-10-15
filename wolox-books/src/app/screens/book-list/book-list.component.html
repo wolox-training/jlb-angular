@@ -1,0 +1,21 @@
+<div>
+  <nav class="nav-bar">
+    <a class="logo">
+      <img class="logo__image" src="assets/LogoWolox.png" alt="Wolox logo">
+    </a>
+    <a class="log-out" (click)="logOut()">Logout</a>
+  </nav>
+  <div class="container">
+    <div class="list__wrapper">
+      <div class="list__cards">
+        <div class="list__card" *ngFor="let card of [1, 2, 3, 4, 5, 6, 7, 8]">
+          <div class="list__cover">
+            <img class="list__cover__image" src="assets/book-cover.png" alt="Wolox book cover">
+          </div>
+          <h2 class="list__title">Título del libro</h2>
+          <h3 class="list__author">Autor del libro</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
