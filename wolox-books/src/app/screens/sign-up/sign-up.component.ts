@@ -18,6 +18,19 @@ export class SignUpComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private userSevice: UserService) {}
 
+  signUp(user: User): void {
+    this.userSevice.createUser(this.user).subscribe(
+      (data: any) => {
+        this.user = data;
+        console.log('Success');
+      },
+      (err) => {
+        console.log('Unsuccess');
+        console.log('err', err);
+      }
+    );
+  }
+
   ngOnInit(): void {
     this.form = this.fb.group({
       first_name: [null, Validators.required],
@@ -32,16 +45,5 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  signUp(user: User): void {
-    this.userSevice.createUser(this.user).subscribe(
-      (data: any) => {
-        this.user = data;
-        console.log('Success');
-      },
-      (err) => {
-        console.log('Unsuccess');
-        console.log('err', err);
-      }
-    );
-  }
+
 }

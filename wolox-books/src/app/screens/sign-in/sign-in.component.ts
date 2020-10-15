@@ -12,17 +12,14 @@ export class SignInComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.form = fb.group({
+  constructor(private fb: FormBuilder) {}
+
+  signIn(signInData: SignInData): void {}
+
+  ngOnInit(): void {
+    this.form = this.fb.group({
       email: [null, Validators.compose([Validators.required, Validators.email])],
       password: [null, Validators.required],
     });
-  }
-
-  signIn(signInData: SignInData) {
-    console.log(signInData);
-  }
-
-  ngOnInit(): void {
   }
 }
