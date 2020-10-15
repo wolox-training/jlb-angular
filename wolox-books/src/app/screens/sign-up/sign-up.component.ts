@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { User } from './interfaces/user';
 import { matchingValidator } from './helpers/utilities/matching.validator';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,10 +16,19 @@ export class SignUpComponent implements OnInit {
 
   private user: User;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private userSevice: UserService) {}
 
   signUp(user: User): void {
-    this.user = user;
+    this.userSevice.createUser(this.user).subscribe(
+      (data: any) => {
+        this.user = data;
+        console.log('Success');
+      },
+      (err) => {
+        console.log('Unsuccess');
+        console.log('err', err);
+      }
+    );
   }
 
   ngOnInit(): void {
@@ -34,4 +44,6 @@ export class SignUpComponent implements OnInit {
       validator: matchingValidator('password', 'password_confirmation')
     });
   }
+
+
 }
