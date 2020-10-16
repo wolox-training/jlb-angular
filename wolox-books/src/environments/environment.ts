@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  rootUserUrl: 'https://books-training-rails.herokuapp.com/api/v1'
+  rootUserUrl: 'https://books-training-rails.herokuapp.com/api/v1',
+  rootLoginUrl: 'https://private-anon-0c50cfb094-wbooksapi.apiary-mock.com/api/v1'
 };
 
 /*

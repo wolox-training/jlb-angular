@@ -1,3 +1,4 @@
+import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SignInData } from './interfaces/sign-in-data';
@@ -10,12 +11,22 @@ import { SignInData } from './interfaces/sign-in-data';
 export class SignInComponent implements OnInit {
 
   form: FormGroup;
+  session: any;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private loginService: LoginService) {}
 
-  signIn(signInData: SignInData): void {}
+  signIn(signInData: SignInData): void {
+    this.loginService.login(signInData).subscribe(
+      data => {
+        this.session = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
     this.form = this.fb.group({
       email: [null, Validators.compose([Validators.required, Validators.email])],
       password: [null, Validators.required],

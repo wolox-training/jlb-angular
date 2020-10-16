@@ -9,7 +9,7 @@
       <!-- Password input -->
       <label class="form__label">Password</label>
       <div class="form__alert" *ngIf="form.controls['password']?.errors?.required && form.controls['password']?.touched">Debes completar este campo</div>
-      <input class="form__input" type="text" formControlName="password">
+      <input class="form__input" type="password" formControlName="password">
       <!-- Submit button -->
       <button class="form__submit" type="submit" [disabled]="!form.valid">Login</button>
     </form>
