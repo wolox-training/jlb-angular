@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  rootUserUrl: 'https://books-training-rails.herokuapp.com/api/v1',
+  rootLoginUrl: 'https://private-anon-0c50cfb094-wbooksapi.apiary-mock.com/api/v1'
 };
 
 /*

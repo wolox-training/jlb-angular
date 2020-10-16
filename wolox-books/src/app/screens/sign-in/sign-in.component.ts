@@ -2,7 +2,6 @@ import { LocalStorageService } from './../../services/local-storage.service';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { SignInData } from './interfaces/sign-in-data';
 import { Router } from '@angular/router';
 
@@ -20,17 +19,11 @@ export class SignInComponent implements OnInit {
     private fb: FormBuilder,
     private loginService: LoginService,
     private localStorageService: LocalStorageService,
-    private router: Router) {
-    this.form = fb.group({
-      email: [null, Validators.compose([Validators.required, Validators.email])],
-      password: [null, Validators.required],
-    });
-  }
+    private router: Router) {}
 
   signIn(signInData: SignInData): void {
     this.loginService.login(signInData).subscribe(
       data => {
-        console.log(data);
         this.session = data;
         this.localStorageService.saveSession(data);
         this.router.navigate(['/home']);
@@ -41,6 +34,10 @@ export class SignInComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
+  ngOnInit(): void{
+    this.form = this.fb.group({
+      email: [null, Validators.compose([Validators.required, Validators.email])],
+      password: [null, Validators.required],
+    });
   }
 }
