@@ -16,4 +16,9 @@ export class LocalStorageService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('renew_id');
   }
+
+  validateSession(): boolean {
+    return !!localStorage.getItem('access_token')
+      && !!localStorage.getItem('renew_id');
+  }
 }

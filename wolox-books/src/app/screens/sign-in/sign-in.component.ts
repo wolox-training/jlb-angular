@@ -17,16 +17,12 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private loginService: LoginService,
-    private localStorageService: LocalStorageService,
-    private router: Router) {}
+    private loginService: LoginService) {}
 
   signIn(signInData: SignInData): void {
     this.loginService.login(signInData).subscribe(
       data => {
         this.session = data;
-        this.localStorageService.saveSession(data);
-        this.router.navigate(['/home']);
       },
       err => {
         console.log(err);
