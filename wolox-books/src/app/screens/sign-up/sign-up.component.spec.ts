@@ -1,19 +1,28 @@
+import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MockUserService } from './mocks/mock-user-service';
 import { User } from './interfaces/user';
 import { MockUser } from './mocks/mock-user';
-import { RouterTestingModule } from '@angular/router/testing';
 import { UserService } from './../../services/user.service';
 import { SignBaseModule } from './../../components/sign-base/sign-base.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up.component';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { Router } from '@angular/router';
 
 describe('SignUpComponent', () => {
   let fixture: ComponentFixture<SignUpComponent>;
   let component: SignUpComponent;
   let router: Router;
+  let elements;
+  const selectors = [
+    { name: 'firstName', className: '.form__input[formControlName=first_name]' },
+    { name: 'lastName', className: '.form__input[formControlName=last_name]' },
+    { name: 'email', className: '.form__input[formControlName=email]' },
+    { name: 'password', className: '.form__input[formControlName=password]' },
+    { name: 'passwordConfirmation', className: '.form__input[formControlName=password_confirmation]' },
+    { name: 'signUpButton', className: '.form__submit' }
+  ];
 
   function fillForm(mockUser: User): void {
     component.form.controls.first_name.setValue(mockUser.first_name);
@@ -46,6 +55,11 @@ describe('SignUpComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SignUpComponent);
     component = fixture.componentInstance;
+    elements = selectors.reduce((a, c) => {
+      a[c.name] = fixture.debugElement.nativeElement.querySelector(c.className);
+      return a;
+    }, {});
+    fixture.detectChanges();
   });
 
   describe('Test: when the component is started', () => {
@@ -54,18 +68,12 @@ describe('SignUpComponent', () => {
     });
 
     it('A form should be with first name, last name, email, password, password confirmation input and sign up button', () => {
-      const firstName = fixture.debugElement.nativeElement.querySelector('.form__input[formControlName=first_name]');
-      const lastName = fixture.debugElement.nativeElement.querySelector('.form__input[formControlName=last_name]');
-      const email = fixture.debugElement.nativeElement.querySelector('.form__input[formControlName=email]');
-      const password = fixture.debugElement.nativeElement.querySelector('.form__input[formControlName=password]');
-      const passwordConfirmation = fixture.debugElement.nativeElement.querySelector('.form__input[formControlName=password_confirmation]');
-      const signUpButton = fixture.debugElement.nativeElement.querySelector('.form__submit');
-      expect(firstName).toBeDefined();
-      expect(lastName).toBeDefined();
-      expect(email).toBeDefined();
-      expect(password).toBeDefined();
-      expect(passwordConfirmation).toBeDefined();
-      expect(signUpButton).toBeDefined();
+      expect(elements.firstName).toBeDefined();
+      expect(elements.lastName).toBeDefined();
+      expect(elements.email).toBeDefined();
+      expect(elements.password).toBeDefined();
+      expect(elements.passwordConfirmation).toBeDefined();
+      expect(elements.signUpButton).toBeDefined();
       expect(component.form.value.locale).toEqual('en');
     });
 
@@ -75,18 +83,16 @@ describe('SignUpComponent', () => {
     });
 
     it('Submit button should be disabled', () => {
-      const submitButton = fixture.nativeElement.querySelector('.form__submit');
       fixture.detectChanges();
-      expect(submitButton.disabled).toBeTruthy();
+      expect(elements.signUpButton.disabled).toBeTruthy();
     });
   });
 
   describe('Test: input fields filled in', () => {
     it('Submit button should be enabled when form is filled', () => {
       fillForm(MockUser);
-      const submitButton = fixture.nativeElement.querySelector('.form__submit');
       fixture.detectChanges();
-      expect(submitButton.disabled).toBeFalsy();
+      expect(elements.signUpButton.disabled).toBeFalsy();
       const alertMsg = fixture.debugElement.nativeElement.querySelector('.form__alert');
       expect(alertMsg).toBeNull();
     });
