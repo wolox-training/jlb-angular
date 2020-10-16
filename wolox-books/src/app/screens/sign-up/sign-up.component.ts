@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { User } from './interfaces/user';
 import { matchingValidator } from './helpers/utilities/matching.validator';
 import { UserService } from '../../services/user.service';
@@ -14,18 +13,20 @@ export class SignUpComponent implements OnInit {
 
   form: FormGroup;
 
-  private user: User;
+  public user: any;
+  public error: any;
 
   constructor(private fb: FormBuilder, private userSevice: UserService) {}
 
   signUp(user: User): void {
-    this.userSevice.createUser(this.user).subscribe(
+    this.userSevice.createUser(user).subscribe(
       (data: any) => {
         this.user = data;
         console.log('Success');
       },
       (err) => {
         console.log('Unsuccess');
+        this.error = err;
         console.log('err', err);
       }
     );
@@ -44,6 +45,4 @@ export class SignUpComponent implements OnInit {
       validator: matchingValidator('password', 'password_confirmation')
     });
   }
-
-
 }
