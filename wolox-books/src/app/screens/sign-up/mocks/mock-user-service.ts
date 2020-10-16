@@ -1,5 +1,5 @@
-import { User } from './../interfaces/user';
 import { Observable, of, throwError } from 'rxjs';
+import { User } from './../interfaces/user';
 
 export class MockUserService {
 
@@ -10,16 +10,14 @@ export class MockUserService {
           email: ['has already been taken'],
           full_messages: ['Email has already been taken']
         }
-      }
-    );
-    } else {
-      return of({
-        id: 1,
-        first_name: 'Carl',
-        last_name: 'Sagan',
-        email: 'carlsagan@cosmos.com',
-        locale: 'en'
       });
     }
+    return of({
+      id: 1,
+      first_name: 'Carl',
+      last_name: 'Sagan',
+      email: 'carlsagan@cosmos.com',
+      locale: 'en'
+    });
   }
 }
