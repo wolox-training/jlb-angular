@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// import { SignBaseComponent } from './components/sign-base/sign-base.component';
-
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     loadChildren: () => import('./screens/sign-in/sign-in.module').then(m => m.SignInModule)
-    // loadChildren: () => import('./screens/sign-up/sign-up.module').then(m => m.SignUpModule)
+  },
+  {
+    path: 'sign-up',
+    loadChildren: () => import('./screens/sign-up/sign-up.module').then(m => m.SignUpModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./screens/book-list/book-list.module').then(m => m.BookListModule)
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
   }
 ];
 

@@ -4,9 +4,9 @@
 @import 'base/equalizer.scss';
 @import 'base/buttons.scss';
 @import 'base/forms.scss';
+@import 'base/nav-bar.scss';
 
 .body {
-  min-height: 100vh;
+  height: 100vh;
   min-width: 100vw;
-  position: relative;
 }

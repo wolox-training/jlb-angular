@@ -1,0 +1,63 @@
+@import '../../../styles/base/colors';
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: $white-smoke;
+  padding-top: 70px;
+}
+
+.list__wrapper {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+.list__cards {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 936px;
+  width: 100%;
+}
+
+.list__card {
+  background: $white;
+  box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
+  display: flex;
+  flex-flow: column;
+  margin: 16px;
+  max-height: 300px;
+  max-width: 198px;
+  padding: 28px 28px 24px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.list__cover {
+  margin-bottom: 12px;
+  overflow: hidden;
+
+  &__image {
+    max-width: inherit;
+    width: 100%;
+  }
+}
+
+.list__author {
+  color: $gray;
+  font-size: 14px;
+}
+
+.list__title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
