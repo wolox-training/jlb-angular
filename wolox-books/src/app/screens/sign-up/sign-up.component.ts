@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from './interfaces/user';
 import { matchingValidator } from './helpers/utilities/matching.validator';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,13 +17,14 @@ export class SignUpComponent implements OnInit {
   public user: any;
   public error: any;
 
-  constructor(private fb: FormBuilder, private userSevice: UserService) {}
+  constructor(private fb: FormBuilder, private userSevice: UserService, private router: Router) {}
 
   signUp(user: User): void {
     this.userSevice.createUser(user).subscribe(
       (data: any) => {
         this.user = data;
         console.log('Success');
+        this.router.navigate(['login']);
       },
       (err) => {
         console.log('Unsuccess');

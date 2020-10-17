@@ -2,6 +2,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MockUserService } from './mocks/mock-user-service';
 import { User } from './interfaces/user';
 import { MockUser } from './mocks/mock-user';
@@ -12,6 +13,7 @@ import { SignUpComponent } from './sign-up.component';
 describe('SignUpComponent', () => {
   let fixture: ComponentFixture<SignUpComponent>;
   let component: SignUpComponent;
+  let router: Router;
   let elements;
   const selectors = [
     { name: 'firstName', className: '.form__input[formControlName=first_name]' },
@@ -46,6 +48,8 @@ describe('SignUpComponent', () => {
         { provide: UserService, useClass: MockUserService}
       ]
     }).compileComponents();
+    router = TestBed.inject(Router);
+    spyOn(router, 'navigate').and.callFake(() => { });
   });
 
   beforeEach(() => {
